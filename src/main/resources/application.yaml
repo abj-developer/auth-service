@@ -1,3 +1,14 @@
 spring:
   application:
     name: auth-service
+
+server:
+  port: 9197
+  forward-headers-strategy: framework
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://service-registry:8761/eureka/
