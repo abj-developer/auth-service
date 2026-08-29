@@ -39,4 +39,8 @@ public class JwtService {
                 .signWith(secretKey, Jwts.SIG.HS256)
                 .compact();
     }
+
+    public long getExpirationInSeconds() {
+        return expiration / 1000;
+    }
 }

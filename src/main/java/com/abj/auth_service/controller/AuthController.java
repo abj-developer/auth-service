@@ -2,6 +2,7 @@ package com.abj.auth_service.controller;
 
 import com.abj.auth_service.dto.LoginRequest;
 import com.abj.auth_service.dto.LoginResponse;
+import com.abj.auth_service.entity.RefreshTokenRequest;
 import com.abj.auth_service.service.AuthService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,5 +19,14 @@ public class AuthController {
     @PostMapping("/login")
     public LoginResponse login(@RequestBody LoginRequest request) {
         return authService.login(request);
+    }
+
+    @PostMapping("/refresh")
+    public LoginResponse refresh(
+            @RequestBody RefreshTokenRequest request) {
+
+        return authService.refreshToken(
+                request.getRefreshToken()
+        );
     }
 }

@@ -2,6 +2,17 @@ spring:
   application:
     name: auth-service
 
+  datasource:
+    url: jdbc:mysql://mysql:3306/authdb
+    username: root
+    password: ${MYSQL_ROOT_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 server:
   port: 9197
   forward-headers-strategy: framework
