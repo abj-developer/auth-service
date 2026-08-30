@@ -66,3 +66,17 @@ jobs:
           IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/auth-service
           docker build -t $IMAGE_NAME:${{ github.sha }} .
           docker push $IMAGE_NAME:${{ github.sha }}
+
+      - name: Deploy to Oracle VM
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.ORACLE_HOST }}
+          username: ${{ secrets.ORACLE_USERNAME }}
+          key: ${{ secrets.ORACLE_SSH_KEY }}
+          script: |
+            cd /path/to/deployment-config
+
+            export AUTH_SERVICE_TAG=${{ github.sha }}
+
+            docker compose pull auth-service
+            docker compose up -d --no-build auth-service
