@@ -74,7 +74,7 @@ jobs:
           username: ${{ secrets.ORACLE_USERNAME }}
           key: ${{ secrets.ORACLE_SSH_KEY }}
           script: |
-            cd /path/to/deployment-config
+            cd /home/ubuntu/deployment-config
 
             export AUTH_SERVICE_TAG=${{ github.sha }}
 
