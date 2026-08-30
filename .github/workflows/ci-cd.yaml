@@ -18,7 +18,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: authdb
+          MYSQL_DATABASE: authdb_test
 
         ports:
           - 3306:3306
@@ -49,3 +49,6 @@ jobs:
 
       - name: Build application
         run: ./mvnw package -DskipTests
+
+      - name: Build Docker image
+        run: docker build -t auth-service:${{ github.sha }} .
