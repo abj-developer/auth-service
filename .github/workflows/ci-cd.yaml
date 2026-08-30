@@ -8,6 +8,12 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Docker image tag to deploy"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -76,7 +82,7 @@ jobs:
           script: |
             cd /home/ubuntu/deployment-config
 
-            export AUTH_SERVICE_TAG=${{ github.sha }}
+            export AUTH_SERVICE_TAG=${{ inputs.image_tag || github.sha }}
 
             docker compose pull auth-service
             docker compose up -d --no-build auth-service
