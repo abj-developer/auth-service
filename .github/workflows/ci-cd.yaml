@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: production
+      name: ${{ env.DEPLOY_ENV }}
 
     steps:
 

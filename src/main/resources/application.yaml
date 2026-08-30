@@ -23,3 +23,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://service-registry:8761/eureka/
+env:
+  DEPLOY_ENV: dev
