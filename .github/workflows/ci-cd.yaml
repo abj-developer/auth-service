@@ -17,6 +17,10 @@ on:
         default: ""
         type: string
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
 
   cicd:
