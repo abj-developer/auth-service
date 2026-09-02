@@ -21,7 +21,7 @@ jobs:
 
   cicd:
 
-    uses: abj-developer/deployment-config/.github/workflows/reusable-service-cicd.yml@main
+    uses: abj-developer/deployment-config/.github/workflows/reusable-service-cicd.yaml@main
 
     with:
       service_name: auth-service
