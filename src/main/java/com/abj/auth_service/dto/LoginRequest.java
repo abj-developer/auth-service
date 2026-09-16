@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Data
 public class LoginRequest {
 
-    @Schema(example = "admin")
+    @Schema(example = "abj")
     private String username;
 
     @Schema(example = "abj123")
