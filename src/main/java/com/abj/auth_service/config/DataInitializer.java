@@ -20,8 +20,8 @@ public class DataInitializer {
             if (authUserRepository.findByUsername("ambuj").isEmpty()) {
 
                 AuthUser user = new AuthUser(
-                        "ambuj",
-                        passwordEncoder.encode("password"),
+                        "abj",
+                        passwordEncoder.encode("abj123"),
                         "USER",
                         true
                 );
